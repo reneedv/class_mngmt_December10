@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<% if current_student %>
+You are logged in as: <%= current_student.email %>
+<%= link_to 'Logout', destroy_student_session_path, method: :delete %>
+<% else %>
+<%= link_to 'Login', new_student_session_path %>
+<% end %>
+
 <%= yield %>
 
 </body>

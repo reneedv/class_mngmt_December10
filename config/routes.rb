@@ -1,7 +1,10 @@
 ClassMngmnt::Application.routes.draw do
+  devise_for :students
   resources :students
 
   get '/hello', to: 'hello#hi'
+
+  root to: "students#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
